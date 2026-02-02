@@ -124,6 +124,8 @@ rule havoc_win_api_dynamic_resolution {
 }
 ```
 
+Link of the Yara rule: [https://github.com/BoBNewz/HavocC2Defense/blob/main/havoc.yar](https://github.com/BoBNewz/HavocC2Defense/blob/main/havoc.yar)
+
 ## Havoc network analysis
 
 The analysis began by simulating **HTTP traffic** between the target host and the Havoc C2 server, while simultaneously monitoring the network via **Wireshark**. This allowed for the capture of the Demon initialization sequence, as well as subsequent command executions and file transfers.
@@ -157,6 +159,8 @@ _Execution of the tool_
 ![Decrypted data](/assets/img/decrypting-c2-havoc/decrypted_data.png)
 _Decrypted data_
 
+Link of the file: [https://github.com/BoBNewz/HavocC2Defense/blob/main/Havoc_HTTP_Parser/havoc-http-parser.py](https://github.com/BoBNewz/HavocC2Defense/blob/main/Havoc_HTTP_Parser/havoc-http-parser.py)
+
 The Demon initialization phase is not always present in network traffic captures (PCAPs), as it may occur outside the recording window. Consequently, alternative methods for extracting AES parameters were explored, leading to an initial investigation centered on volatile memory analysis.
 
 ## Havoc memory analysis
@@ -184,6 +188,8 @@ _Created regex_
 
 ![Volatility2](/assets/img/decrypting-c2-havoc/volatility_run.png)
 _Execution of the volatility module_
+
+Link of the volatility2 plugin: [https://github.com/BoBNewz/HavocC2Defense/blob/main/volatility/vol2/havoc.py](https://github.com/BoBNewz/HavocC2Defense/blob/main/volatility/vol2/havoc.py)
 
 ## Next Steps
 
